@@ -1,23 +1,10 @@
-def calcular_factorial(numero):
-    if numero < 0:
-        return None
-    elif numero == 0:
-        return 1
-    else:
-        factorial = 1
-        for i in range(1, numero + 1):
-            factorial *= i
-        return factorial
+def obtener_elementos_unicos(lista):
+    elementos_unicos = list(set(lista))
+    return elementos_unicos
 
 if __name__ == "__main__":
-    try:
-        numero = int(input("Ingrese un número entero para calcular su factorial: "))
+    lista_ejemplo = [1, 2, 2, 3, 3, 4, 5, 5]
+    lista_unicos = obtener_elementos_unicos(lista_ejemplo)
 
-        factorial = calcular_factorial(numero)
-
-        if factorial is not None:
-            print(f"El factorial de {numero} es: {factorial}")
-        else:
-            print("El factorial no está definido para números negativos.")
-    except ValueError:
-        print("Por favor, ingrese un número entero válido.")
+    print(f"Lista original: {lista_ejemplo}")
+    print(f"Lista con elementos únicos: {lista_unicos}")
