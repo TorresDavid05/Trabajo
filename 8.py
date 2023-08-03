@@ -1,18 +1,14 @@
-def contar_letras_mayusculas_minusculas(cadena):
-    mayusculas = 0
-    minusculas = 0
+import random
 
-    for letra in cadena:
-        if letra.isupper():
-            mayusculas += 1
-        elif letra.islower():
-            minusculas += 1
+def representar_barras_asteriscos(numero_elementos, rango_min, rango_max):
+    numeros_aleatorios = [random.randint(rango_min, rango_max) for _ in range(numero_elementos)]
 
-    return mayusculas, minusculas
+    print("Números generados:")
+    for numero in numeros_aleatorios:
+        print(f"{numero}: {'*' * numero}")
 
 if __name__ == "__main__":
-    cadena_ejemplo = "Hola Mundo"
-    mayusculas, minusculas = contar_letras_mayusculas_minusculas(cadena_ejemplo)
-
-    print(f"Número de letras mayúsculas: {mayusculas}")
-    print(f"Número de letras minúsculas: {minusculas}")
+    numero_elementos = 10
+    rango_min = 1
+    rango_max = 20
+    representar_barras_asteriscos(numero_elementos, rango_min, rango_max)

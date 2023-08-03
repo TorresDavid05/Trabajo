@@ -1,15 +1,18 @@
-def esta_en_rango(numero, rango_inicial, rango_final):
-    return rango_inicial <= numero <= rango_final
+import random
+
+def lanzamientos_hasta_cinco():
+    contador_lanzamientos = 0
+
+    while True:
+        resultado_lanzamiento = random.randint(1, 6)
+        contador_lanzamientos += 1
+        print(f"Lanzamiento {contador_lanzamientos}: {resultado_lanzamiento}")
+
+        if resultado_lanzamiento == 5:
+            break
+
+    return contador_lanzamientos
 
 if __name__ == "__main__":
-    try:
-        num = float(input("Ingrese un número: "))
-        rango_inicio = float(input("Ingrese el límite inferior del rango: "))
-        rango_fin = float(input("Ingrese el límite superior del rango: "))
-
-        if esta_en_rango(num, rango_inicio, rango_fin):
-            print(f"El número {num} está dentro del rango [{rango_inicio}, {rango_fin}]")
-        else:
-            print(f"El número {num} está fuera del rango [{rango_inicio}, {rango_fin}]")
-    except ValueError:
-        print("Por favor, ingrese valores numéricos válidos.")
+    lanzamientos = lanzamientos_hasta_cinco()
+    print(f"Se necesitaron {lanzamientos} lanzamientos para obtener el número 5.")
