@@ -1,15 +1,13 @@
-def obtener_digitos_binarios(numero):
-    digitos_binarios = []
-    while numero > 0:
-        residuo = numero % 2
-        digitos_binarios.insert(0, residuo)
-        numero //= 2
-    return digitos_binarios
+def obtener_numero_mas_pequeno(lista):
+    if len(lista) == 0:
+        return None
+    return min(lista)
 
 if __name__ == "__main__":
-    try:
-        num_decimal = int(input("Ingrese un número entero decimal: "))
-        digitos_binarios = obtener_digitos_binarios(num_decimal)
-        print(f"El equivalente binario de {num_decimal} es: {''.join(map(str, digitos_binarios))}")
-    except ValueError:
-        print("Por favor, ingrese un número entero válido.")
+    lista = [5, 2, 8, 1, 9]
+    numero_mas_pequeno = obtener_numero_mas_pequeno(lista)
+    
+    if numero_mas_pequeno is not None:
+        print(f"El número más pequeño de la lista es: {numero_mas_pequeno}")
+    else:
+        print("La lista está vacía, no se puede obtener el número más pequeño.")

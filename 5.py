@@ -1,38 +1,10 @@
-import random
-
-def juego_adivinar_numero(rango_inicial, rango_final):
-    numero_secreto = random.randint(rango_inicial, rango_final)
-    intentos = 0
-
-    print(f"¡Bienvenido al juego de adivinar el número! El número está entre {rango_inicial} y {rango_final}.")
-    print("Escribe 'ayuda' si necesitas una pista.")
-
-    while True:
-        intentos += 1
-        adivinanza = input("Introduce tu número: ")
-
-        if adivinanza.lower() == "ayuda":
-            if numero_secreto % 2 == 0:
-                print("El número secreto es par.")
-            else:
-                print("El número secreto es impar.")
-            continue
-
-        try:
-            numero_adivinado = int(adivinanza)
-        except ValueError:
-            print("Por favor, ingresa un número válido.")
-            continue
-
-        if numero_adivinado == numero_secreto:
-            print(f"¡Felicidades! Adivinaste el número en {intentos} intentos.")
-            break
-        elif numero_adivinado < numero_secreto:
-            print("El número es más grande. Sigue intentando.")
-        else:
-            print("El número es más pequeño. Sigue intentando.")
+def palabras_mas_largas_que_n(lista_palabras, n):
+    palabras_mas_largas = [palabra for palabra in lista_palabras if len(palabra) > n]
+    return palabras_mas_largas
 
 if __name__ == "__main__":
-    rango_inicial = 1
-    rango_final = 100
-    juego_adivinar_numero(rango_inicial, rango_final)
+    lista_palabras = ["python", "programa", "ejemplo", "largo", "lista", "corto"]
+    n = 5
+    palabras_mas_largas = palabras_mas_largas_que_n(lista_palabras, n)
+    print(f"Lista de palabras: {lista_palabras}")
+    print(f"Palabras más largas que {n}: {palabras_mas_largas}")
