@@ -1,10 +1,16 @@
-def sumar_lista(lista):
-    suma = 0
-    for elemento in lista:
-        suma += elemento
-    return suma
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-if __name__ == "__main__":
-    lista = [1, 2, 3, 4, 5]
-    resultado = sumar_lista(lista)
-    print(f"La suma de los elementos de la lista es: {resultado}")
+    def calculate_area(self):
+        return self.length * self.width
+
+# Ejemplo de uso:
+rectangle1 = Rectangle(5, 10)
+area1 = rectangle1.calculate_area()
+print("El área del rectángulo 1 es:", area1)
+
+rectangle2 = Rectangle(7, 3)
+area2 = rectangle2.calculate_area()
+print("El área del rectángulo 2 es:", area2)

@@ -1,10 +1,24 @@
-def multiplicar_lista(lista):
-    resultado = 1
-    for elemento in lista:
-        resultado *= elemento
-    return resultado
+import math
 
-if __name__ == "__main__":
-    lista = [2, 3, 4, 5]
-    resultado = multiplicar_lista(lista)
-    print(f"El resultado de multiplicar los elementos de la lista es: {resultado}")
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calculate_area(self):
+        return math.pi * self.radius ** 2
+
+    def calculate_perimeter(self):
+        return 2 * math.pi * self.radius
+
+# Ejemplo de uso:
+circle1 = Circle(5)
+area1 = circle1.calculate_area()
+perimeter1 = circle1.calculate_perimeter()
+print("El área del círculo 1 es:", area1)
+print("El perímetro del círculo 1 es:", perimeter1)
+
+circle2 = Circle(7)
+area2 = circle2.calculate_area()
+perimeter2 = circle2.calculate_perimeter()
+print("El área del círculo 2 es:", area2)
+print("El perímetro del círculo 2 es:", perimeter2)
