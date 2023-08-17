@@ -1,0 +1,57 @@
+C:\>cd "Proyecto python"
+
+C:\Proyecto python> py -m venv env
+
+C:\Proyecto python>cd env
+
+C:\Proyecto python\env>cd Scripts
+
+C:\Proyecto python\env\Scripts>.\activate
+
+(env) C:\Proyecto python\env\Scripts>cd..
+
+(env) C:\Proyecto python\env>cd..
+
+(env) C:\Proyecto python>pip install django
+Collecting django
+  Using cached Django-4.2.4-py3-none-any.whl (8.0 MB)
+Collecting asgiref<4,>=3.6.0 (from django)
+  Using cached asgiref-3.7.2-py3-none-any.whl (24 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Using cached sqlparse-0.4.4-py3-none-any.whl (41 kB)
+Collecting tzdata (from django)
+  Using cached tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.7.2 django-4.2.4 sqlparse-0.4.4 tzdata-2023.3
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(env) C:\Proyecto python> django-admin starproject Proyecto python
+No Django settings specified.
+Unknown command: 'starproject'. Did you mean startproject?
+Type 'django-admin help' for usage.
+
+(env) C:\Proyecto python>django-admin startproject Proyecto python
+CommandError: Destination directory 'C:\Proyecto python\python' does not exist, please create it first.
+
+(env) C:\Proyecto python>django-admin startproject Proyectopython
+
+(env) C:\Proyecto python>cd Proyectopython
+
+(env) C:\Proyecto python\Proyectopython>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 17, 2023 - 12:48:25
+Django version 4.2.4, using settings 'Proyectopython.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[17/Aug/2023 12:50:23] "GET / HTTP/1.1" 200 10664
+Not Found: /favicon.ico
+[17/Aug/2023 12:50:23] "GET /favicon.ico HTTP/1.1" 404 2118
